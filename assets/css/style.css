@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --BG:#222;
+    --White: #fff;
+    --Black: #000;
+}
+
+body
+{
+    background-color: var(--BG);
+    color: var(--White);
+}
+
+
+.BottomNav{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: space-evenly;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    background-color: #555;
+    border-top: 3px solid;
+    height: 6rem;
+}
+
+.BottomNavBelow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 20px;
+}
+
+.BottomNavButtons{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.BottomNavButtons i{
+    margin: 0 8px;
+}
+
+.BottomNavButtons i:hover{
+    color: rgb(30, 156, 199);
+}
+
+
+.details{
+    display: flex;
+    align-items: center;
+}
+
+.details h5{
+    margin: 0 10px;
+}
+
+.BottomNavBelow span img{
+    width: 2rem;
+    border: 2px solid;
+}
+
+#play{
+    font-size: 45px;
+}
+
+#bars{
+    width: 4rem;
+    height: 2rem;
+    opacity: 0;
+    transition: opacity .3s;
+    border: none;
+}
+
+#TimeStamp{
+    width: 90%;
+    cursor: pointer;
+}
+
+#TimeStamp::-moz-range-thumb{
+    background-color: white;
+}
+
+#TimeStamp::-ms-track{
+    background-color: #222;
+}
+
+.bx{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.bx:focus-within{
+    color: rgb(47, 255, 57);
+}
