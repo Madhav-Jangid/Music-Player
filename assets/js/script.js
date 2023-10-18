@@ -11,12 +11,12 @@ let AllSongs = [
         ImageCover: 'https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn'
     },
     {
-        SongFile: 'assets/songs/Blue Eyes.mp3',
+        SongFile: 'assets/songs/Love Dose.mp3',
         SongName: 'Love Dose',
         ImageCover: 'https://imgs.search.brave.com/7xtFSNT0Dj1Qzy2p8Xb8uNNk0vx_kJjqxe5kGSkOoXA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9U/dm5nWTR1bmpuNC8w/LmpwZw'
     },
     {
-        SongFile: 'assets/songs/Blue Eyes.mp3',
+        SongFile: 'assets/songs/Kuley Kuley.mp3',
         SongName: 'Kuley Kuley',
         ImageCover: 'https://imgs.search.brave.com/Yj4UO7PZVg0w7qOu3NEWHOZT_Qx3xB900nfnG8S-_c4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS82/NjEvS3VsZXktS3Vs/ZXktRnJvbS1Ib25l/eS0zLTAtUHVuamFi/aS0yMDIzLTIwMjMw/OTE0MTEzNTUzLTUw/MHg1MDAuanBn'
     }
@@ -33,12 +33,22 @@ const TimeBar = document.getElementById('TimeStamp');
 const current = document.getElementById('current');
 const duration = document.getElementById('duration');
 
-function ChangeSongs(){
-    
+var AudioX = new Audio(AllSongs[SongIndex].SongFile);
+
+function ChangeSongs(Index){
+    AudioX = new Audio(AllSongs[Index].SongFile);
+    AudioX.addEventListener('timeupdate', function() {  
+        var progress = ((AudioX.currentTime/AudioX.duration)*100)
+        TimeBar.value = progress;
+        current.innerHTML = AudioX.currentTime;
+    });
+    TimeBar.addEventListener('change',function(){
+        AudioX.currentTime = (TimeBar.value*AudioX.duration)/100;
+    })
+    AudioX.play();
 }
 
 
-var AudioX = new Audio(AllSongs[SongIndex].SongFile);
 function PlaySong(Index){
     if (AudioX.paused || AudioX.currentTime < 0) {
         PlayButton.classList.remove('bx-play-circle');
@@ -48,7 +58,7 @@ function PlaySong(Index){
         SongImg.src = AllSongs[Index].ImageCover;
         SongImg.style.display = 'block';
         duration.innerHTML = ((AudioX.duration)/60);
-        AudioX.play();
+        ChangeSongs(Index);
     } else {
         console.log('Pused')
         PlayButton.classList.remove('bx-pause-circle');
@@ -64,12 +74,5 @@ function PlaySong(Index){
 }
 
 
-AudioX.addEventListener('timeupdate', function() {  
-    var progress = ((AudioX.currentTime/AudioX.duration)*100)
-    TimeBar.value = progress;
-    current.innerHTML = AudioX.currentTime;
-});
 
-TimeBar.addEventListener('change',function(){
-    AudioX.currentTime = (TimeBar.value*AudioX.duration)/100;
-})
+

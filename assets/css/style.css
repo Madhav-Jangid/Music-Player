@@ -17,6 +17,10 @@ body
     color: var(--White);
 }
 
+::-webkit-scrollbar{
+    display: none;
+}
+
 .main{
     background: url('https://imgs.search.brave.com/o-0Be2kNgV48Atwwdozi4ck4iwXn7YcsVR5VarVvwR4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS83NS81/MS80WkVyRFQuanBl/Zw');
     background-position:center;
@@ -94,8 +98,7 @@ body
     border-top: 3px solid;
     height: 6rem;
     z-index: 99;
-    backdrop-filter: blur(5px);
-    /* position: relative; */
+    backdrop-filter: blur(15px);
 }
 
 .BottomNavBelow{
