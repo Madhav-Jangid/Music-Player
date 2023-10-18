@@ -32,37 +32,67 @@ const SongImg = document.getElementById('coverimg');
 const TimeBar = document.getElementById('TimeStamp');
 const current = document.getElementById('current');
 const duration = document.getElementById('duration');
+const smallPlay = document.querySelectorAll('.song-play');
+
+
+var ButtonArray = [];
+smallPlay.forEach((item) => {
+    ButtonArray.push(item);
+})
+
+
 
 var AudioX = new Audio(AllSongs[SongIndex].SongFile);
 
-function ChangeSongs(Index){
+function ChangeSongs(Index) {
+    AudioX.pause();
     AudioX = new Audio(AllSongs[Index].SongFile);
-    AudioX.addEventListener('timeupdate', function() {  
-        var progress = ((AudioX.currentTime/AudioX.duration)*100)
-        TimeBar.value = progress;
-        current.innerHTML = AudioX.currentTime;
-    });
-    TimeBar.addEventListener('change',function(){
-        AudioX.currentTime = (TimeBar.value*AudioX.duration)/100;
-    })
-    AudioX.play();
+    if (AudioX.paused || AudioX.currentTime < 0) {
+        AudioX.addEventListener('timeupdate', function () {
+            var progress = ((AudioX.currentTime / AudioX.duration) * 100)
+            TimeBar.value = progress;
+            current.innerHTML = AudioX.currentTime;
+        });
+        TimeBar.addEventListener('change', function () {
+            AudioX.currentTime = (TimeBar.value * AudioX.duration) / 100;
+        })
+        AudioX.play();
+        // PlaySong(Index);
+    } else {
+        AudioX.pause();
+        // PlaySong(Index);
+    }
 }
 
 
-function PlaySong(Index){
+function PlaySong(Index) {
     if (AudioX.paused || AudioX.currentTime < 0) {
         PlayButton.classList.remove('bx-play-circle');
         PlayButton.classList.add('bx-pause-circle');
+        ButtonArray[Index].classList.remove('bx-play-circle');
+        ButtonArray[Index].classList.add('bx-pause-circle');
         BarsGif.style.opacity = '1';
         SongName.innerHTML = AllSongs[Index].SongName;
         SongImg.src = AllSongs[Index].ImageCover;
         SongImg.style.display = 'block';
-        duration.innerHTML = ((AudioX.duration)/60);
+        duration.innerHTML = ((AudioX.duration) / 60);
         ChangeSongs(Index);
+        ButtonArray.forEach((i) => {
+            if (Index == ButtonArray.indexOf(i)) {
+                // null
+            } else {
+                i.classList.remove('bx-pause-circle');
+                i.classList.add('bx-play-circle');
+
+            }
+        })
+
     } else {
         console.log('Pused')
         PlayButton.classList.remove('bx-pause-circle');
         PlayButton.classList.add('bx-play-circle');
+        ButtonArray[Index].classList.remove('bx-pause-circle');
+        ButtonArray[Index].classList.add('bx-play-circle');
         BarsGif.style.opacity = '0';
         SongName.innerHTML = '';
         SongImg.src = '';
@@ -70,6 +100,19 @@ function PlaySong(Index){
         current.innerHTML = '';
         SongImg.style.display = 'none';
         AudioX.pause();
+    }
+}
+
+
+
+function NavigateSong(dir) {
+    if (dir == 'left') {
+        SongIndex -= 1;
+        ChangeSongs(SongIndex);
+    }
+    else if (dir == 'right') {
+        SongIndex += 1;
+        ChangeSongs(SongIndex);
     }
 }
 
