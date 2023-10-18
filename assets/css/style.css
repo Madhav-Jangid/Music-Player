@@ -17,6 +17,70 @@ body
     color: var(--White);
 }
 
+.main{
+    background: url('https://imgs.search.brave.com/o-0Be2kNgV48Atwwdozi4ck4iwXn7YcsVR5VarVvwR4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jZG4u/d2FsbHBhcGVyc2Fm/YXJpLmNvbS83NS81/MS80WkVyRFQuanBl/Zw');
+    background-position:center;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+.songs{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg,#ff0055,rgba(0, 0, 0, 0.411),#ff0055);
+    width: 500px;
+    height: 600px;
+    margin: 5px 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid ;
+    overflow-y: scroll;
+}
+
+.song{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5px;
+    position: relative;
+    background: #d40e64;
+    height: 3.5rem;
+    border-radius: 50px;
+    margin: 10px;
+    box-shadow: 0 0 10px wheat;
+}
+
+.song .song-img{
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    border: 2px solid var(--White);
+    position: absolute;
+    left: 10px;
+}
+
+.song-name{
+    font-weight: 500;
+    letter-spacing: 1px;
+    position: absolute;
+}
+
+.song-play{
+    position: absolute;
+    right: 10px;
+}
+
+.inputRange{
+    width: 90vw;
+    margin: 0 5vw;
+    display: flex;
+    justify-content: space-evenly;
+}
 
 .BottomNav{
     display: flex;
@@ -26,9 +90,12 @@ body
     align-items: center;
     position: fixed;
     bottom: 0;
-    background-color: #555;
+    background: transparent;
     border-top: 3px solid;
     height: 6rem;
+    z-index: 99;
+    backdrop-filter: blur(5px);
+    /* position: relative; */
 }
 
 .BottomNavBelow{
@@ -43,14 +110,19 @@ body
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top: 15px;
 }
 
 .BottomNavButtons i{
     margin: 0 8px;
 }
 
-.BottomNavButtons i:hover{
-    color: rgb(30, 156, 199);
+i:hover{
+    color: #5d00ff;
 }
 
 
@@ -63,7 +135,8 @@ body
     margin: 0 10px;
 }
 
-.BottomNavBelow span img{
+.details img{
+    display: none;
     width: 2rem;
     border: 2px solid;
 }
@@ -83,14 +156,12 @@ body
 #TimeStamp{
     width: 90%;
     cursor: pointer;
+    transition: all .1s linear;
 }
 
-#TimeStamp::-moz-range-thumb{
-    background-color: white;
-}
-
-#TimeStamp::-ms-track{
-    background-color: #222;
+#TimeStamp:hover{
+    background-color: #ff0055;
+    color: #ff0055;
 }
 
 .bx{
@@ -98,6 +169,10 @@ body
     cursor: pointer;
 }
 
-.bx:focus-within{
-    color: rgb(47, 255, 57);
+@media (max-width:650px) {
+    #SkipPrevious,
+    #SkipNext,
+    #bars{
+        display: none;
+    }
 }
