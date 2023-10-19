@@ -1,0 +1,107 @@
+#left-nav{
+    margin: 10px;
+    width: 20vw;
+    height: calc(100vh - 7rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--BG);
+    border-radius: 10px;
+}
+
+.top-div button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--white);
+    padding: 10px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.top-div button{
+    margin: 7px;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    border-radius: 50px;
+    padding: 1px 10px;
+}
+
+.top-div i span{
+    font-size: 25px;
+    font-weight: 200;
+    margin: 10px;
+}
+
+.top-div button:hover,
+.top-div button i:hover{
+    background-color: #000000;
+    color: var(--white);
+}
+
+.top-div button:focus-within{
+    background-color: #000000;
+    color: var(--white);
+    border: 1px solid rgb(0, 115, 255);
+}
+
+
+.artist-div{
+    width: 100%;
+    height: 100%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--BG);
+    border-radius: 10px;
+}
+
+.artist-div h2{
+    margin: 10px;
+}
+
+.artist{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.artist img{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 10px;
+    border: 2px solid;
+    overflow: hidden;
+}
+
+.artist span{
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-left: 10px;
+}
+
+#yoyo span{
+    margin-bottom: 10px;
+}
+
+.artist:hover{
+    background-color: #333;
+    cursor: pointer;
+}
+
+.artist:focus-within{
+    background-color: #333;
+    border: 1px solid rgb(0, 115, 255);
+}

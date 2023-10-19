@@ -6,43 +6,242 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/left-nav.css">
+    <link rel="stylesheet" href="assets/css/center-ele.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 
 <body>
 
-    <div class="main">
-        <div class="songs">
-            <div class="song">
-                <img class="song-img" src="https://imgs.search.brave.com/8j0L7nod2E1AH0B7F0dPqNiTdSAEEtmbYGhAvz27sAs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS8x/NzMvWW8tWW8tSG9u/ZXktU2luZ2gtSGlu/ZGktMjAxOS0yMDE5/MDMzMTAxMjczNS01/MDB4NTAwLmpwZw" alt="Img 1">
-                <span class="song-name">One Thusand Miles</span>
-                <span class="song-duration"></span>
-                <i class='bx bx-play-circle song-play' onclick="PlaySong(0)"></i>
-            </div>
-
-            <div class="song">
-                <img class="song-img" src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn" alt="Img 1">
-                <span class="song-name">Blue Eyes</span>
-                <span class="song-duration"></span>
-                <i class='bx bx-play-circle song-play' onclick="PlaySong(1)"></i>
-            </div>
-            <div class="song">
-                <img class="song-img" src="https://imgs.search.brave.com/7xtFSNT0Dj1Qzy2p8Xb8uNNk0vx_kJjqxe5kGSkOoXA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9U/dm5nWTR1bmpuNC8w/LmpwZw" alt="Img 1">
-                <span class="song-name">Love Dose</span>
-                <span class="song-duration"></span>
-                <i class='bx bx-play-circle song-play' onclick="PlaySong(2)"></i>
-            </div>
-            <div class="song">
-                <img class="song-img" src="https://imgs.search.brave.com/Yj4UO7PZVg0w7qOu3NEWHOZT_Qx3xB900nfnG8S-_c4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS82/NjEvS3VsZXktS3Vs/ZXktRnJvbS1Ib25l/eS0zLTAtUHVuamFi/aS0yMDIzLTIwMjMw/OTE0MTEzNTUzLTUw/MHg1MDAuanBn" alt="Img 1">
-                <span class="song-name">Kuley Kuley</span>
-                <span class="song-duration"></span>
-                <i class='bx bx-play-circle song-play' onclick="PlaySong(3)"></i>
-            </div>
-            
+    <section id="left-nav">
+        <div class="top-div">
+            <button><i class='bx bx-home-alt'><span>Home</span></i></button>
+            <button><i class='bx bx-search'><span>Search</span></i></button>
         </div>
-    </div>
 
+        <div class="artist-div">
+            <h2>Play Lists</h2>
+            <div id="yoyo" onclick="DisplayArtist('yoyo-songs')" class="artist">
+                <img src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
+                    alt="YoYo Honey Singh">
+                <span>Yo Yo Honey Singh</span>
+            </div>
+
+            <div id="arijit" onclick="DisplayArtist('arijit-songs')" class="artist">
+                <img src="https://imgs.search.brave.com/tqvBGmicsNh4hvUBEUCMvVFPi_6A0gWGCX-lOC7qmnc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTMubW91dGhzaHV0/LmNvbS9pbWFnZXMv/aW1hZ2VzcC85MjU5/MzQ2NTJzLmpwZw"
+                    alt="Arjit Singh">
+                <span>Arjit Singh</span>
+            </div>
+
+            <div id="bollyWood" onclick="DisplayArtist('bollywood-songs')" class="artist">
+                <img src="https://imgs.search.brave.com/e_QrsJRgIy1Pcm8th588QMEEWWKHY0Xm1MjNngRT9TU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXZlY3Rvci9tb2Rl/cm4tYm9sbHl3b29k/LWxvZ28tdW5pdC1z/eW1ib2wtMjYwbnct/MTQxNTc4MDUxMC5q/cGc"
+                    alt="BollyWood Songs">
+                <span>BollyWood Songs</span>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="center-ele">
+        <div class="mid-section" id="yoyo-songs">
+            <div class="artist">
+                <img src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
+                    alt="YoYo Honey Singh">
+                <span>Yo Yo Honey Singh</span>
+                <div class="PlayAllSongs">
+                    <i class='bx bx-play'></i>
+                </div>
+            </div>
+
+            <div class="ArtistSongList">
+                <div class="SongHeader">
+                    <h4># Title</h4>
+                    <h4><i class='bx bx-stopwatch'></i></h4>
+                </div>
+
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(0)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/8j0L7nod2E1AH0B7F0dPqNiTdSAEEtmbYGhAvz27sAs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS8x/NzMvWW8tWW8tSG9u/ZXktU2luZ2gtSGlu/ZGktMjAxOS0yMDE5/MDMzMTAxMjczNS01/MDB4NTAwLmpwZw"
+                                alt="Img 1">
+                            <h3 class="song-name">One Thusand Miles</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(1)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
+                                alt="Img 1">
+                            <h3 class="song-name">Blue Eyes</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(2)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/7xtFSNT0Dj1Qzy2p8Xb8uNNk0vx_kJjqxe5kGSkOoXA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9U/dm5nWTR1bmpuNC8w/LmpwZw"
+                                alt="Img 1">
+                            <h3 class="song-name">Love Dose</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(3)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/Yj4UO7PZVg0w7qOu3NEWHOZT_Qx3xB900nfnG8S-_c4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS82/NjEvS3VsZXktS3Vs/ZXktRnJvbS1Ib25l/eS0zLTAtUHVuamFi/aS0yMDIzLTIwMjMw/OTE0MTEzNTUzLTUw/MHg1MDAuanBn"
+                                alt="Img 1">
+                            <h3 class="song-name">Kuley Kuley</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="mid-section" id="arijit-songs">
+            <div class="artist">
+                <img src="https://imgs.search.brave.com/tqvBGmicsNh4hvUBEUCMvVFPi_6A0gWGCX-lOC7qmnc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTMubW91dGhzaHV0/LmNvbS9pbWFnZXMv/aW1hZ2VzcC85MjU5/MzQ2NTJzLmpwZw"
+                    alt="Arjit Singh">
+                <span>Arjit Singh</span>
+                <div class="PlayAllSongs">
+                    <i class='bx bx-play'></i>
+                </div>
+            </div>
+
+            <div class="ArtistSongList">
+                <div class="SongHeader">
+                    <h4># Title</h4>
+                    <h4><i class='bx bx-stopwatch'></i></h4>
+                </div>
+
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(0)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/8j0L7nod2E1AH0B7F0dPqNiTdSAEEtmbYGhAvz27sAs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS8x/NzMvWW8tWW8tSG9u/ZXktU2luZ2gtSGlu/ZGktMjAxOS0yMDE5/MDMzMTAxMjczNS01/MDB4NTAwLmpwZw"
+                                alt="Img 1">
+                            <h3 class="song-name">One Thusand Miles</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(1)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
+                                alt="Img 1">
+                            <h3 class="song-name">Blue Eyes</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(2)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/7xtFSNT0Dj1Qzy2p8Xb8uNNk0vx_kJjqxe5kGSkOoXA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9U/dm5nWTR1bmpuNC8w/LmpwZw"
+                                alt="Img 1">
+                            <h3 class="song-name">Love Dose</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(3)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/Yj4UO7PZVg0w7qOu3NEWHOZT_Qx3xB900nfnG8S-_c4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS82/NjEvS3VsZXktS3Vs/ZXktRnJvbS1Ib25l/eS0zLTAtUHVuamFi/aS0yMDIzLTIwMjMw/OTE0MTEzNTUzLTUw/MHg1MDAuanBn"
+                                alt="Img 1">
+                            <h3 class="song-name">Kuley Kuley</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+
+        <div class="mid-section" id="bollywood-songs">
+            <div class="artist">
+                <img src="https://imgs.search.brave.com/e_QrsJRgIy1Pcm8th588QMEEWWKHY0Xm1MjNngRT9TU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXZlY3Rvci9tb2Rl/cm4tYm9sbHl3b29k/LWxvZ28tdW5pdC1z/eW1ib2wtMjYwbnct/MTQxNTc4MDUxMC5q/cGc"
+                    alt="BollyWood Songs">
+                <span>BollyWood Songs</span>
+                <div class="PlayAllSongs">
+                    <i class='bx bx-play'></i>
+                </div>
+            </div>
+
+            <div class="ArtistSongList">
+                <div class="SongHeader">
+                    <h4># Title</h4>
+                    <h4><i class='bx bx-stopwatch'></i></h4>
+                </div>
+
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(0)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/8j0L7nod2E1AH0B7F0dPqNiTdSAEEtmbYGhAvz27sAs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS8x/NzMvWW8tWW8tSG9u/ZXktU2luZ2gtSGlu/ZGktMjAxOS0yMDE5/MDMzMTAxMjczNS01/MDB4NTAwLmpwZw"
+                                alt="Img 1">
+                            <h3 class="song-name">One Thusand Miles</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(1)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
+                                alt="Img 1">
+                            <h3 class="song-name">Blue Eyes</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(2)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/7xtFSNT0Dj1Qzy2p8Xb8uNNk0vx_kJjqxe5kGSkOoXA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9U/dm5nWTR1bmpuNC8w/LmpwZw"
+                                alt="Img 1">
+                            <h3 class="song-name">Love Dose</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+                <div class="song">
+                    <div class="songSlide" onclick="PlaySong(3)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/Yj4UO7PZVg0w7qOu3NEWHOZT_Qx3xB900nfnG8S-_c4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS82/NjEvS3VsZXktS3Vs/ZXktRnJvbS1Ib25l/eS0zLTAtUHVuamFi/aS0yMDIzLTIwMjMw/OTE0MTEzNTUzLTUw/MHg1MDAuanBn"
+                                alt="Img 1">
+                            <h3 class="song-name">Kuley Kuley</h3>
+                        </div>
+                        <h5 class="song-duration">3:07</h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
 
 
 
@@ -66,7 +265,8 @@
 
 
     <div class="BottomNav">
-        <div class="inputRange"><span id="current"></span><input type="range" name="Time Stamp" id="TimeStamp" value="0"> <span id="duration"></span> </div>
+        <div class="inputRange"><span id="current"></span><input type="range" name="Time Stamp" id="TimeStamp"
+                value="0"> <span id="duration"></span> </div>
         <div class="BottomNavBelow">
             <div class="details">
                 <img src="" alt="" id="coverimg">
@@ -77,7 +277,9 @@
                 <i id="play" class='bx bx-play-circle' onclick="PlaySong(0)"></i>
                 <i id="SkipNext" class='bx bx-skip-next-circle' onclick="NavigateSong('right')"></i>
             </div>
-            <span><img src="https://imgs.search.brave.com/1fWftG8j-Zf6cB_Zf5ZDnaajKMylqVk6API7wc1ih8Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jdXRl/d2FsbHBhcGVyLm9y/Zy8yMS9tdXNpYy1l/cXVhbGl6ZXItZ2lm/L1RhZy1Gb3ItTXVz/aWMtRXF1YWxpemVy/LUdpZi00NXgxMWNt/LU11c2ljLVJoeXRo/bS1MZWQtQ2FyLS5n/aWY.gif" alt="MusicBar" id="bars"></span>
+            <span><img
+                    src="https://imgs.search.brave.com/1fWftG8j-Zf6cB_Zf5ZDnaajKMylqVk6API7wc1ih8Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jdXRl/d2FsbHBhcGVyLm9y/Zy8yMS9tdXNpYy1l/cXVhbGl6ZXItZ2lm/L1RhZy1Gb3ItTXVz/aWMtRXF1YWxpemVy/LUdpZi00NXgxMWNt/LU11c2ljLVJoeXRo/bS1MZWQtQ2FyLS5n/aWY.gif"
+                    alt="MusicBar" id="bars"></span>
         </div>
     </div>
 

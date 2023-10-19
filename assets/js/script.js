@@ -34,13 +34,10 @@ const current = document.getElementById('current');
 const duration = document.getElementById('duration');
 const smallPlay = document.querySelectorAll('.song-play');
 
-
 var ButtonArray = [];
 smallPlay.forEach((item) => {
     ButtonArray.push(item);
 })
-
-
 
 var AudioX = new Audio(AllSongs[SongIndex].SongFile);
 
@@ -64,13 +61,10 @@ function ChangeSongs(Index) {
     }
 }
 
-
 function PlaySong(Index) {
     if (AudioX.paused || AudioX.currentTime < 0) {
         PlayButton.classList.remove('bx-play-circle');
         PlayButton.classList.add('bx-pause-circle');
-        ButtonArray[Index].classList.remove('bx-play-circle');
-        ButtonArray[Index].classList.add('bx-pause-circle');
         BarsGif.style.opacity = '1';
         SongName.innerHTML = AllSongs[Index].SongName;
         SongImg.src = AllSongs[Index].ImageCover;
@@ -91,8 +85,6 @@ function PlaySong(Index) {
         console.log('Pused')
         PlayButton.classList.remove('bx-pause-circle');
         PlayButton.classList.add('bx-play-circle');
-        ButtonArray[Index].classList.remove('bx-pause-circle');
-        ButtonArray[Index].classList.add('bx-play-circle');
         BarsGif.style.opacity = '0';
         SongName.innerHTML = '';
         SongImg.src = '';
@@ -102,8 +94,6 @@ function PlaySong(Index) {
         AudioX.pause();
     }
 }
-
-
 
 function NavigateSong(dir) {
     if (dir == 'left') {
@@ -118,4 +108,10 @@ function NavigateSong(dir) {
 
 
 
-
+function DisplayArtist(id){
+    const section = document.querySelectorAll('.mid-section');
+    section.forEach((item) => {
+        item.style.display = 'none';
+    })
+    document.getElementById(id).style.display = 'block';
+}
