@@ -97,9 +97,12 @@ body
 }
 
 #TimeStamp{
-    width: 90%;
+    width: 90vw;
     cursor: pointer;
     transition: all .1s linear;
+    -webkit-appearance: none;
+    height: 3px;
+    border-radius: 10px;
 }
 
 #TimeStamp:hover{

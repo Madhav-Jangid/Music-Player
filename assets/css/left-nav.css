@@ -1,5 +1,5 @@
 #left-nav{
-    margin: 10px;
+    margin: 10px 5px;
     width: 20vw;
     height: calc(100vh - 7rem);
     display: flex;

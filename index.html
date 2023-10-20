@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/left-nav.css">
     <link rel="stylesheet" href="assets/css/center-ele.css">
+    <link rel="stylesheet" href="assets/css/right-nav.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
@@ -244,6 +245,17 @@
     </section>
 
 
+    <section id="right-nav">
+        <div class="right-nav-main">
+            <button id="closeRightNav">&times;</button>
+            <div class="currentsongdiv">
+                <h3 class="current-song-name song-name"></h3>
+                <div class="current-song-img-div">
+                    <img src="" alt="song-img" class="current-song-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
@@ -269,8 +281,8 @@
                 value="0"> <span id="duration"></span> </div>
         <div class="BottomNavBelow">
             <div class="details">
-                <img src="" alt="" id="coverimg">
-                <h5 id="SongName"></h5>
+                <img src="" alt="" id="coverimg" class="current-song-img">
+                <h5 id="SongName" class="current-song-name"></h5>
             </div>
             <div class="BottomNavButtons">
                 <i id="SkipPrevious" class='bx bx-skip-previous-circle' onclick="NavigateSong('left')"></i>
