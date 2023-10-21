@@ -3,9 +3,9 @@
     display: none;
 }
 
-#yoyo{
+/* #yoyo-songs{
     display: block;
-}
+} */
 
 #center-ele{
     width: 80vw;
@@ -21,13 +21,35 @@
 }
 
 .mid-section .artist{
-    height: 250px;
+    height: 290px;
     background-color:#2374a0;
     border-radius: 10px 10px 0 0;
     align-items: end;
     margin: 0;
     position: relative;
 }
+
+.navigatePlaylist{
+    position: absolute;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigatePlaylist i{
+    background-color: var(--BG);
+    color: var(--White);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.navigatePlaylist i:hover{
+    background-color: var(--Black);
+}
+
 
 .mid-section .artist img{
     width: 9.5rem;
@@ -89,24 +111,26 @@
 .song{
     display: flex;
     justify-content: space-between;
-    height: 2.5rem;
-    margin-bottom: 30px;
+    height: 3.6rem;
+    margin-bottom: 15px;
+    border-radius: 10px;
+
 }
 
 
 .songSlide{
     width: 100%;
-    height: 3.5rem;
+    height: 3.4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .songSlide:hover{
     background-color: #333;
-    border-radius: 10px;
     cursor: pointer;
 }
 

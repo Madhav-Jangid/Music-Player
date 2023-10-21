@@ -36,6 +36,46 @@
     padding: 1px 10px;
 }
 
+.searchDiv{
+    display: flex;
+    align-items: center;
+    position: relative;
+
+}
+
+.searchDiv i{
+    position: absolute;
+    top: 18px;
+    left: 15px;
+}
+
+.searchDiv input{
+    background-color: transparent;
+    border: none;
+    height: 3rem;
+    border-radius: 50px;
+    padding: 1px 10px 1px 50px;
+    color: #fff;
+    margin: 7px;
+    width: 100%;
+    font-size: 25px;
+}
+
+.searchDiv input::placeholder{
+    color: #fff;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+.searchDiv input:focus-visible{
+    background-color: #000;
+    outline: 2px solid rgb(0, 115, 255);
+}
+
+.searchDiv input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 .top-div i span{
     font-size: 25px;
     font-weight: 200;
@@ -43,7 +83,8 @@
 }
 
 .top-div button:hover,
-.top-div button i:hover{
+.top-div button i:hover,
+.searchDiv input:hover{
     background-color: #000000;
     color: var(--white);
 }
@@ -92,8 +133,10 @@
     margin-left: 10px;
 }
 
-#yoyo span{
-    margin-bottom: 10px;
+#detailsRightNav{
+    margin: 10px 0;
+    font-size: 20px;
+    line-height: 39px;
 }
 
 .artist:hover{
@@ -101,7 +144,7 @@
     cursor: pointer;
 }
 
-.artist:focus-within{
+.active{
     background-color: #333;
     border: 1px solid rgb(0, 115, 255);
 }

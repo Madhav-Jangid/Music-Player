@@ -17,28 +17,37 @@
 
     <section id="left-nav">
         <div class="top-div">
-            <button><i class='bx bx-home-alt'><span>Home</span></i></button>
-            <button><i class='bx bx-search'><span>Search</span></i></button>
+            <button><i class='bx bx-home-alt'><span id="dn">Home</span></i></button>
+            <div class="searchDiv">
+                <input type="list" name="Search" id="dn" placeholder="Search" list="suggestions">
+                <datalist id="suggestions">
+                    <option value="Honey Singh">
+                    <option value="Arjit Singh">
+                    <option value="BollyWood Songs">
+                    <option value="Pease">
+                    <option value="Sad Songs">
+                </datalist>
+                <i class='bx bx-search'></i></div>
         </div>
 
         <div class="artist-div">
             <h2>Play Lists</h2>
-            <div id="yoyo" onclick="DisplayArtist('yoyo-songs')" class="artist">
+            <div id="yoyo" onclick="DisplayArtist('yoyo-songs','yoyo')" class="artist playlist active">
                 <img src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
                     alt="YoYo Honey Singh">
-                <span>Yo Yo Honey Singh</span>
+                <span id="dn">Honey Singh</span>
             </div>
-
-            <div id="arijit" onclick="DisplayArtist('arijit-songs')" class="artist">
+                    
+            <div id="arijit" onclick="DisplayArtist('arijit-songs','arijit')" class="artist playlist">
                 <img src="https://imgs.search.brave.com/tqvBGmicsNh4hvUBEUCMvVFPi_6A0gWGCX-lOC7qmnc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTMubW91dGhzaHV0/LmNvbS9pbWFnZXMv/aW1hZ2VzcC85MjU5/MzQ2NTJzLmpwZw"
                     alt="Arjit Singh">
-                <span>Arjit Singh</span>
+                <span id="dn">Arjit Singh</span>
             </div>
 
-            <div id="bollyWood" onclick="DisplayArtist('bollywood-songs')" class="artist">
+            <div id="bollyWood" onclick="DisplayArtist('bollywood-songs','bollyWood')" class="artist playlist">
                 <img src="https://imgs.search.brave.com/e_QrsJRgIy1Pcm8th588QMEEWWKHY0Xm1MjNngRT9TU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXZlY3Rvci9tb2Rl/cm4tYm9sbHl3b29k/LWxvZ28tdW5pdC1z/eW1ib2wtMjYwbnct/MTQxNTc4MDUxMC5q/cGc"
                     alt="BollyWood Songs">
-                <span>BollyWood Songs</span>
+                <span id="dn">BollyWood Songs</span>
             </div>
         </div>
 
@@ -48,6 +57,10 @@
     <section id="center-ele">
         <div class="mid-section" id="yoyo-songs">
             <div class="artist">
+                <div class="navigatePlaylist">
+                    <i class='bx bx-chevron-left' onclick="NavigatePlaylist('left')"></i>
+                    <i class='bx bx-chevron-right' onclick="NavigatePlaylist('right')"></i>
+                </div>
                 <img src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
                     alt="YoYo Honey Singh">
                 <span>Yo Yo Honey Singh</span>
@@ -62,7 +75,7 @@
                     <h4><i class='bx bx-stopwatch'></i></h4>
                 </div>
 
-                <div class="song">
+                <div class="song" id="0">
                     <div class="songSlide" onclick="PlaySong(0)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -70,11 +83,11 @@
                                 alt="Img 1">
                             <h3 class="song-name">One Thusand Miles</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">4:43</h5>
                     </div>
                 </div>
 
-                <div class="song">
+                <div class="song" id="1">
                     <div class="songSlide" onclick="PlaySong(1)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -82,10 +95,10 @@
                                 alt="Img 1">
                             <h3 class="song-name">Blue Eyes</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">3:40</h5>
                     </div>
                 </div>
-                <div class="song">
+                <div class="song" id="2">
                     <div class="songSlide" onclick="PlaySong(2)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -93,10 +106,10 @@
                                 alt="Img 1">
                             <h3 class="song-name">Love Dose</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">3:44</h5>
                     </div>
                 </div>
-                <div class="song">
+                <div class="song" id="3">
                     <div class="songSlide" onclick="PlaySong(3)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -104,7 +117,7 @@
                                 alt="Img 1">
                             <h3 class="song-name">Kuley Kuley</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">3:30</h5>
                     </div>
                 </div>
 
@@ -113,10 +126,14 @@
 
         <div class="mid-section" id="arijit-songs">
             <div class="artist">
+                <div class="navigatePlaylist">
+                    <i class='bx bx-chevron-left'></i>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
                 <img src="https://imgs.search.brave.com/tqvBGmicsNh4hvUBEUCMvVFPi_6A0gWGCX-lOC7qmnc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTMubW91dGhzaHV0/LmNvbS9pbWFnZXMv/aW1hZ2VzcC85MjU5/MzQ2NTJzLmpwZw"
                     alt="Arjit Singh">
                 <span>Arjit Singh</span>
-                <div class="PlayAllSongs">
+                <div class="PlayAllSongs" onclick="PlaySong(0)">
                     <i class='bx bx-play'></i>
                 </div>
             </div>
@@ -127,7 +144,7 @@
                     <h4><i class='bx bx-stopwatch'></i></h4>
                 </div>
 
-                <div class="song">
+                <div class="song" id="0">
                     <div class="songSlide" onclick="PlaySong(0)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -139,7 +156,7 @@
                     </div>
                 </div>
 
-                <div class="song">
+                <div class="song" id="1">
                     <div class="songSlide" onclick="PlaySong(1)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -150,7 +167,7 @@
                         <h5 class="song-duration">3:07</h5>
                     </div>
                 </div>
-                <div class="song">
+                <div class="song" id="2">
                     <div class="songSlide" onclick="PlaySong(2)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -161,7 +178,7 @@
                         <h5 class="song-duration">3:07</h5>
                     </div>
                 </div>
-                <div class="song">
+                <div class="song" id="3">
                     <div class="songSlide" onclick="PlaySong(3)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -179,10 +196,14 @@
 
         <div class="mid-section" id="bollywood-songs">
             <div class="artist">
+                <div class="navigatePlaylist">
+                    <i class='bx bx-chevron-left'></i>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
                 <img src="https://imgs.search.brave.com/e_QrsJRgIy1Pcm8th588QMEEWWKHY0Xm1MjNngRT9TU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXZlY3Rvci9tb2Rl/cm4tYm9sbHl3b29k/LWxvZ28tdW5pdC1z/eW1ib2wtMjYwbnct/MTQxNTc4MDUxMC5q/cGc"
                     alt="BollyWood Songs">
                 <span>BollyWood Songs</span>
-                <div class="PlayAllSongs">
+                <div class="PlayAllSongs" onclick="PlaySong(0)">
                     <i class='bx bx-play'></i>
                 </div>
             </div>
@@ -193,7 +214,7 @@
                     <h4><i class='bx bx-stopwatch'></i></h4>
                 </div>
 
-                <div class="song">
+                <div class="song" id="0">
                     <div class="songSlide" onclick="PlaySong(0)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -205,7 +226,7 @@
                     </div>
                 </div>
 
-                <div class="song">
+                <div class="song" id="1">
                     <div class="songSlide" onclick="PlaySong(1)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -216,7 +237,7 @@
                         <h5 class="song-duration">3:07</h5>
                     </div>
                 </div>
-                <div class="song">
+                <div class="song" id="2">
                     <div class="songSlide" onclick="PlaySong(2)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -227,7 +248,7 @@
                         <h5 class="song-duration">3:07</h5>
                     </div>
                 </div>
-                <div class="song">
+                <div class="song" id="3">
                     <div class="songSlide" onclick="PlaySong(3)">
                         <div class="song-credits">
                             <img class="song-img"
@@ -253,6 +274,7 @@
                 <div class="current-song-img-div">
                     <img src="" alt="song-img" class="current-song-img">
                 </div>
+                <p id="detailsRightNav"></p>
             </div>
         </div>
     </section>
@@ -276,9 +298,12 @@
 
 
 
-    <div class="BottomNav">
-        <div class="inputRange"><span id="current"></span><input type="range" name="Time Stamp" id="TimeStamp"
-                value="0"> <span id="duration"></span> </div>
+    <div class="BottomNav" id="BottomNav">
+        <div class="inputRange">
+            <span id="current"></span>
+            <input type="range" name="Time Stamp" id="TimeStamp" value="0" step="0.0000000000000001">
+            <span id="duration"></span>
+        </div>
         <div class="BottomNavBelow">
             <div class="details">
                 <img src="" alt="" id="coverimg" class="current-song-img">
@@ -286,12 +311,16 @@
             </div>
             <div class="BottomNavButtons">
                 <i id="SkipPrevious" class='bx bx-skip-previous-circle' onclick="NavigateSong('left')"></i>
-                <i id="play" class='bx bx-play-circle' onclick="PlaySong(0)"></i>
+                <i id="play" class='bx bx-play-circle' onclick="PlayPause()"></i>
                 <i id="SkipNext" class='bx bx-skip-next-circle' onclick="NavigateSong('right')"></i>
             </div>
-            <span><img
-                    src="https://imgs.search.brave.com/1fWftG8j-Zf6cB_Zf5ZDnaajKMylqVk6API7wc1ih8Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jdXRl/d2FsbHBhcGVyLm9y/Zy8yMS9tdXNpYy1l/cXVhbGl6ZXItZ2lm/L1RhZy1Gb3ItTXVz/aWMtRXF1YWxpemVy/LUdpZi00NXgxMWNt/LU11c2ljLVJoeXRo/bS1MZWQtQ2FyLS5n/aWY.gif"
-                    alt="MusicBar" id="bars"></span>
+            <span>
+                <div class="volume">
+                    <i class='bx bx-volume-full' id="volIcon"></i>
+                    <input type="range" name="Volume" id="volumeRange" min="0" max="1" step="0.1" value="1">
+                </div>
+                <!-- <img src="https://imgs.search.brave.com/1fWftG8j-Zf6cB_Zf5ZDnaajKMylqVk6API7wc1ih8Y/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jdXRl/d2FsbHBhcGVyLm9y/Zy8yMS9tdXNpYy1l/cXVhbGl6ZXItZ2lm/L1RhZy1Gb3ItTXVz/aWMtRXF1YWxpemVy/LUdpZi00NXgxMWNt/LU11c2ljLVJoeXRo/bS1MZWQtQ2FyLS5n/aWY.gif" alt="MusicBar" id="bars"> -->
+            </span>
         </div>
     </div>
 

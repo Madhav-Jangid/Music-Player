@@ -31,18 +31,22 @@ body
 }
 
 .BottomNav{
-    display: flex;
-    flex-direction: column;
     width: 100vw;
+    height: 7rem;
+    display: flex;
+    flex-direction: column-reverse;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
     bottom: 0;
     background: transparent;
-    border-top: 3px solid;
-    height: 6rem;
+    /* border-top: 3px solid; */
+    box-shadow: 10px 0 15px #000;
     z-index: 99;
+    background-color: rgba(0,0,0,0.5);
     backdrop-filter: blur(15px);
+    transform: translateY(7rem);
+    transition: transform .3s ease-in;
 }
 
 .BottomNavBelow{
@@ -51,23 +55,25 @@ body
     align-items: center;
     width: 90%;
     margin: 0 20px;
+    padding: 0 10px;
 }
 
 .BottomNavButtons{
+    position:absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-35%,-50%);
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin-top: 15px;
 }
 
 .BottomNavButtons i{
-    margin: 0 8px;
+    margin: 0 5px;
 }
 
+.BottomNavButtons i:hover{
+    color: rgb(35, 232, 55);
+}
 
 .details{
     display: flex;
@@ -76,37 +82,59 @@ body
 
 .details h5{
     margin: 0 10px;
+    font-size: 20px;
 }
 
 .details img{
     display: none;
-    width: 2rem;
-    border: 2px solid;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid rgb(35, 232, 55);
+    animation: rotate 4.5s linear infinite;
 }
 
 #play{
-    font-size: 45px;
+    font-size: 50px;
 }
 
-#bars{
-    width: 4rem;
-    height: 2rem;
-    opacity: 0;
-    transition: opacity .3s;
-    border: none;
+.inputRange{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 #TimeStamp{
-    width: 90vw;
+    width: 80vw;
     cursor: pointer;
     transition: all .1s linear;
     -webkit-appearance: none;
     height: 3px;
+    background: #fff;
     border-radius: 10px;
+    margin: 15px 0;
 }
 
+#TimeStamp::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    background-position: center;
+    background-size: cover;
+    width: 18px;
+    height: 18px;
+    background-color: #000000;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff;
+    transition: all s linear;
+}
+
+#TimeStamp::-ms-thumb{
+    background-color: rgb(35, 232, 55);
+}
+
+
 #TimeStamp:hover{
-    background-color: #ff0055;
+    background-color: #2374a0;
     color: #ff0055;
 }
 
@@ -115,10 +143,57 @@ body
     cursor: pointer;
 }
 
-@media (max-width:650px) {
+
+.volume{
+    background-color: #a11b1b00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 30px;
+    
+}
+
+.volume input{
+    transition: all .1s linear;
+    -webkit-appearance: none;
+    height: 3px;
+    width: 10vw;
+    border-radius: 10px;
+    background-color: #fff;
+    margin: 15px 0;
+}
+
+.volume input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 20px;
+    width: 10px;
+    background-color: rgb(35, 232, 55);
+}
+
+#volIcon{
+    color: rgb(35, 232, 55);
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (max-width:950px) {
     #SkipPrevious,
     #SkipNext,
     #bars{
+        /* display: none; */
+    }
+
+    #left-nav span{
         display: none;
     }
 }
