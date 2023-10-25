@@ -14,20 +14,24 @@
 </head>
 
 <body>
-
+    <!-- list="suggestions" -->
     <section id="left-nav">
+        <div class="menu">
+            <i class='bx bx-menu-alt-left' onclick="leftNav()"></i>
+        </div>
         <div class="top-div">
             <button><i class='bx bx-home-alt'><span id="dn">Home</span></i></button>
             <div class="searchDiv">
-                <input type="list" name="Search" id="dn" placeholder="Search" list="suggestions">
+                <input type="text" name="Search" id="dn2" placeholder="Search" >
                 <datalist id="suggestions">
-                    <option value="Honey Singh">
-                    <option value="Arjit Singh">
-                    <option value="BollyWood Songs">
-                    <option value="Pease">
-                    <option value="Sad Songs">
+                    <!-- <option value=></option>
+                    <option value="Honey Singh"></option>
+                    <option value="Arjit Singh"></option>
+                    <option value="BollyWood Songs"></option>
+                    <option value="Pease"></option>
+                    <option value="Sad Songs"></option> -->
                 </datalist>
-                <i class='bx bx-search'></i></div>
+                <i class='bx bx-search' onclick="DisplaySection()"></i></div>
         </div>
 
         <div class="artist-div">
@@ -133,7 +137,7 @@
                 <img src="https://imgs.search.brave.com/tqvBGmicsNh4hvUBEUCMvVFPi_6A0gWGCX-lOC7qmnc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTMubW91dGhzaHV0/LmNvbS9pbWFnZXMv/aW1hZ2VzcC85MjU5/MzQ2NTJzLmpwZw"
                     alt="Arjit Singh">
                 <span>Arjit Singh</span>
-                <div class="PlayAllSongs" onclick="PlaySong(0)">
+                <div class="PlayAllSongs" onclick="PlaySong(4)">
                     <i class='bx bx-play'></i>
                 </div>
             </div>
@@ -144,52 +148,85 @@
                     <h4><i class='bx bx-stopwatch'></i></h4>
                 </div>
 
-                <div class="song" id="0">
-                    <div class="songSlide" onclick="PlaySong(0)">
+                <div class="song" id="4">
+                    <div class="songSlide" onclick="PlaySong(4)">
                         <div class="song-credits">
                             <img class="song-img"
-                                src="https://imgs.search.brave.com/8j0L7nod2E1AH0B7F0dPqNiTdSAEEtmbYGhAvz27sAs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS8x/NzMvWW8tWW8tSG9u/ZXktU2luZ2gtSGlu/ZGktMjAxOS0yMDE5/MDMzMTAxMjczNS01/MDB4NTAwLmpwZw"
+                                src="https://imgs.search.brave.com/rIEXdQsgTKEO7upaZpUimGdRXYFsE8e5ToaGvLksoa4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS83/MjMvQWdhci1UdW0t/U2FhdGgtSG8tRnJv/bS1UYW1hc2hhLS1F/bmdsaXNoLTIwMTkt/MjAyMDAxMDYyMTU5/NDUtNTAweDUwMC5q/cGc"
                                 alt="Img 1">
-                            <h3 class="song-name">One Thusand Miles</h3>
+                            <h3 class="song-name">Agar Tum Sath Ho</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">5:41</h5>
                     </div>
                 </div>
 
-                <div class="song" id="1">
-                    <div class="songSlide" onclick="PlaySong(1)">
+                <div class="song" id="5">
+                    <div class="songSlide" onclick="PlaySong(5)">
                         <div class="song-credits">
                             <img class="song-img"
-                                src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
+                                src="https://imgs.search.brave.com/kgy5QMO4mteU3geNSaJ4CNSKyipxTJJdlaMtZ-IcrWI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aGluZGl0cmFja3Mu/aW4vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDgva2hhaXJp/eWF0LWx5cmljcy5q/cGc"
                                 alt="Img 1">
-                            <h3 class="song-name">Blue Eyes</h3>
+                            <h3 class="song-name">Khariyat</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">4:40</h5>
                     </div>
                 </div>
-                <div class="song" id="2">
-                    <div class="songSlide" onclick="PlaySong(2)">
+                <div class="song" id="6">
+                    <div class="songSlide" onclick="PlaySong(6)">
                         <div class="song-credits">
                             <img class="song-img"
-                                src="https://imgs.search.brave.com/7xtFSNT0Dj1Qzy2p8Xb8uNNk0vx_kJjqxe5kGSkOoXA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnl0/aW1nLmNvbS92aS9U/dm5nWTR1bmpuNC8w/LmpwZw"
+                                src="https://imgs.search.brave.com/JBH9vZozqQSIUfM0oeuchOPm2wXjNFkRcOg7FIxXecI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9scS5k/ampvaGFsLmNvbS9j/b3ZlcnMvNjc5MTAv/UGFsJTIwKEphbGVi/aSkuanBn"
                                 alt="Img 1">
-                            <h3 class="song-name">Love Dose</h3>
+                            <h3 class="song-name">Pal</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">4:07</h5>
                     </div>
                 </div>
-                <div class="song" id="3">
-                    <div class="songSlide" onclick="PlaySong(3)">
+                <div class="song" id="7">
+                    <div class="songSlide" onclick="PlaySong(7)">
                         <div class="song-credits">
                             <img class="song-img"
-                                src="https://imgs.search.brave.com/Yj4UO7PZVg0w7qOu3NEWHOZT_Qx3xB900nfnG8S-_c4/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS82/NjEvS3VsZXktS3Vs/ZXktRnJvbS1Ib25l/eS0zLTAtUHVuamFi/aS0yMDIzLTIwMjMw/OTE0MTEzNTUzLTUw/MHg1MDAuanBn"
+                                src="https://imgs.search.brave.com/0FxD9hgpno9qe6j-aOQEL-cVXAd3Iiwk6nlRFbyOKbY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vOTlseXJp/Y3N0b3JlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS9XZWJwLm5ldC1j/b21wcmVzcy1pbWFn/ZTJCMjUyODM2MjUy/OS5qcGc_dz04NDAm/c3NsPTE"
                                 alt="Img 1">
-                            <h3 class="song-name">Kuley Kuley</h3>
+                            <h3 class="song-name">Shayad</h3>
                         </div>
-                        <h5 class="song-duration">3:07</h5>
+                        <h5 class="song-duration">4:08</h5>
                     </div>
                 </div>
 
+                <div class="song" id="8">
+                    <div class="songSlide" onclick="PlaySong(8)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/sb8U3iPe6WqQqdg5f1447tYC99LDkoqFeWtMV2uzQXs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9wYWdh/bG5ldy5jb20vY292/ZXJpbWFnZXMvc29j/aC1saXlhLXJhZGhl/LXNoeWFtLWhpbmRp/LTIwMjEtNTAwLTUw/MC5qcGc"
+                                alt="Img 1">
+                            <h3 class="song-name">Soch Liya</h3>
+                        </div>
+                        <h5 class="song-duration">4:43</h5>
+                    </div>
+                </div>
+                <div class="song" id="9">
+                    <div class="songSlide" onclick="PlaySong(9)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/3DDJJ49DlUbRllOyve4RRKdN2thlpFoQFlPnf7yMyr8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9wYWdh/bGl3b3JsZC5jb20v/c2l0ZXVwbG9hZHMv/dGh1bWIvc2Z0My8x/Mzc4XzQuanBn"
+                                alt="Img 1">
+                            <h3 class="song-name">Tera Yaar hun</h3>
+                        </div>
+                        <h5 class="song-duration">4:25</h5>
+                    </div>
+                </div>
+                <div class="song" id="10">
+                    <div class="songSlide" onclick="PlaySong(10)">
+                        <div class="song-credits">
+                            <img class="song-img"
+                                src="https://imgs.search.brave.com/TXf1LxuGDmDu_6h_iUgYv8wGsim7v6dBL6ibEG0y7go/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/Ym9sbHlub29rLmNv/bS91cGxvYWRlZF9w/aWN0dXJlcy9jb250/ZW50L2x5cmljcy81/MjB4MzMzL3R1amhl/LWtpdG5hLWNoYWhu/ZS1sYWdlLTIyMTM2/LmpwZw"
+                                alt="Img 1">
+                            <h3 class="song-name">Tujhe Kitna Chane Lge</h3>
+                        </div>
+                        <h5 class="song-duration">4:45</h5>
+                    </div>
+                </div>
             </div>
         </div>
         </div>

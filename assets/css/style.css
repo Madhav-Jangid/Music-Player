@@ -187,13 +187,27 @@ body
 
 
 @media (max-width:950px) {
-    #SkipPrevious,
-    #SkipNext,
-    #bars{
-        /* display: none; */
+    .searchDiv input::placeholder{
+        display: none;
     }
 
     #left-nav span{
         display: none;
     }
+
+    .top-div,
+    .artist-div{
+        align-items: center;
+    }
+
+    #right-nav{
+        display: none;
+    }
+    /* #left-nav{
+        transform: translateX(-140px);
+    }
+
+    #left-nav .menu{
+        display: flex;
+    } */
 }

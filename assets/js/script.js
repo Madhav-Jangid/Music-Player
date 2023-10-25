@@ -1,9 +1,9 @@
-document.addEventListener("keydown", function (event) {
-    if (event.keyCode === 32) {
-        console.log("Spacebar was pressed.");
-        PlaySong(0);
-    }
-});
+// document.addEventListener("keydown", function (event) {
+//     if (event.keyCode === 32) {
+//         console.log("Spacebar was pressed.");
+//         PlaySong(0);
+//     }
+// });
 var SongIndex = 0;
 let AllSongs = [
     {
@@ -38,41 +38,108 @@ let AllSongs = [
         details: '<b>Singer:</b> YoYo Honey Singh<br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
         duration: '3:30'
 
+    },
+    {
+        SongFile: 'assets/songs/Arjit Singh/Agar Tum Saath Ho.mp3',
+        SongName: 'Agar Tum Sath Ho',
+        ImageCover: 'https://imgs.search.brave.com/rIEXdQsgTKEO7upaZpUimGdRXYFsE8e5ToaGvLksoa4/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS83/MjMvQWdhci1UdW0t/U2FhdGgtSG8tRnJv/bS1UYW1hc2hhLS1F/bmdsaXNoLTIwMTkt/MjAyMDAxMDYyMTU5/NDUtNTAweDUwMC5q/cGc',
+        details: '<b>Singer:</b> Arjit Singh <br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
+        duration: '5:41'
+
+    },
+    {
+        SongFile: 'assets/songs/Arjit Singh/Khairiyat.mp3',
+        SongName: 'Khariyat',
+        ImageCover: 'https://imgs.search.brave.com/kgy5QMO4mteU3geNSaJ4CNSKyipxTJJdlaMtZ-IcrWI/rs:fit:860:0:0/g:ce/aHR0cHM6Ly93d3cu/aGluZGl0cmFja3Mu/aW4vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTkvMDgva2hhaXJp/eWF0LWx5cmljcy5q/cGc',
+        details: '<b>Singer:</b> Arjit Singh <br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
+        duration: '4:40'
+
+    },
+    {
+        SongFile: 'assets/songs/Arjit Singh/Pal.mp3',
+        SongName: 'Pal',
+        ImageCover: 'https://imgs.search.brave.com/JBH9vZozqQSIUfM0oeuchOPm2wXjNFkRcOg7FIxXecI/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9scS5k/ampvaGFsLmNvbS9j/b3ZlcnMvNjc5MTAv/UGFsJTIwKEphbGVi/aSkuanBn',
+        details: '<b>Singer:</b> Arjit Singh <br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
+        duration: '4:07'
+
+    },
+    {
+        SongFile: 'assets/songs/Arjit Singh/Shayad.mp3',
+        SongName: 'Shayad',
+        ImageCover: 'https://imgs.search.brave.com/0FxD9hgpno9qe6j-aOQEL-cVXAd3Iiwk6nlRFbyOKbY/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pMC53/cC5jb20vOTlseXJp/Y3N0b3JlLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMC8w/MS9XZWJwLm5ldC1j/b21wcmVzcy1pbWFn/ZTJCMjUyODM2MjUy/OS5qcGc_dz04NDAm/c3NsPTE',
+        details: '<b>Singer:</b> Arjit Singh <br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
+        duration: '4:08'
+
+    },
+    {
+        SongFile: 'assets/songs/Arjit Singh/Soch Liya.mp3',
+        SongName: 'Soch Liya',
+        ImageCover: 'https://imgs.search.brave.com/sb8U3iPe6WqQqdg5f1447tYC99LDkoqFeWtMV2uzQXs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9wYWdh/bG5ldy5jb20vY292/ZXJpbWFnZXMvc29j/aC1saXlhLXJhZGhl/LXNoeWFtLWhpbmRp/LTIwMjEtNTAwLTUw/MC5qcGc',
+        details: '<b>Singer:</b> Arjit Singh <br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
+        duration: '4:43'
+
+    },
+    {
+        SongFile: 'assets/songs/Arjit Singh/Tera Yaar Hoon Main.mp3',
+        SongName: 'Tera Yaar hun',
+        ImageCover: 'https://imgs.search.brave.com/3DDJJ49DlUbRllOyve4RRKdN2thlpFoQFlPnf7yMyr8/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9wYWdh/bGl3b3JsZC5jb20v/c2l0ZXVwbG9hZHMv/dGh1bWIvc2Z0My8x/Mzc4XzQuanBn',
+        details: '<b>Singer:</b> Arjit Singh <br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
+        duration: '4:25'
+
+    },
+    {
+        SongFile: 'assets/songs/Arjit Singh/Tujhe Kitna Chahne Lage.mp3',
+        SongName: 'Tujhe Kitna Chane Lge',
+        ImageCover: 'https://imgs.search.brave.com/TXf1LxuGDmDu_6h_iUgYv8wGsim7v6dBL6ibEG0y7go/rs:fit:500:0:0/g:ce/aHR0cHM6Ly93d3cu/Ym9sbHlub29rLmNv/bS91cGxvYWRlZF9w/aWN0dXJlcy9jb250/ZW50L2x5cmljcy81/MjB4MzMzL3R1amhl/LWtpdG5hLWNoYWhu/ZS1sYWdlLTIyMTM2/LmpwZw',
+        details: '<b>Singer:</b> Arjit Singh <br><b>Release Date:</b> 0/0/0<br><b>Album:</b>Album Name',
+        duration: '4:45'
+
     }
 ]
 
+var cnd1 = true;
+function leftNav(){
+    if(cnd1){
+        document.getElementById('left-nav').style.transform = 'translateX(0)';
+    }else{
+        document.getElementById('left-nav').style.transform = 'translateX(-313px)';
+    }
+    cnd1 = !cnd1;
+}
 
-var PlaylistList = ['yoyo','arijit','bollyWood'];
+var PlaylistList = ['yoyo-songs', 'arijit-songs', 'bollywood-songs'];
 var ListIndex = 0;
 
 var Midsection = document.querySelectorAll('.mid-section');
 
-
+console.log(PlaylistList.length)
 
 function NavigatePlaylist(dir) {
     if (dir == 'left') {
         if (ListIndex == 0) {
-            ListIndex = AllSongs.length - 1;
-            
+            ListIndex = PlaylistList.length - 1;
+
         } else {
             ListIndex -= 1;
         }
-        
-        Midsection.forEach((item) => {
-            item.style.display = 'none'
-        })
-        document.getElementById(PlaylistList[ListIndex]).style.display = block;
+
+        // Midsection.forEach((item) => {
+        //     item.style.display = 'none'
+        // })
+        document.getElementById(PlaylistList[ListIndex + 1]).style.display = 'none';
+        document.getElementById(PlaylistList[ListIndex]).style.display = 'block';
     }
     else if (dir == 'right') {
-        if (ListIndex == AllSongs.length - 1) {
+        if (ListIndex == PlaylistList.length - 1) {
             ListIndex = 0
         } else {
             ListIndex += 1;
         }
-        Midsection.forEach((item) => {
-            item.style.display = 'none'
-        })
-        document.getElementById(PlaylistList[ListIndex]).style.display = block;
+        // Midsection.forEach((item) => {
+        //     item.style.display = 'none'
+        // })
+        document.getElementById(PlaylistList[ListIndex - 1]).style.display = 'none';
+        document.getElementById(PlaylistList[ListIndex]).style.display = 'block';
     }
 }
 
@@ -104,7 +171,7 @@ const TimeBar = document.getElementById('TimeStamp');
 const current = document.getElementById('current');
 const Volume = document.getElementById('volumeRange')
 
-function ChangeSongs(Index,Is) {
+function ChangeSongs(Index, Is) {
     if (Is) {
         AudioX.pause();
         setTimeout(() => {
@@ -265,6 +332,43 @@ function NavigateSong(dir) {
         }
         ChangeSongs(SongIndex, true);
         rightnav(SongIndex, true);
+    }
+}
+var searchInput = document.getElementById("dn2");
+console.log(searchInput)
+
+
+const option = document.createElement("option");
+const datalist = document.getElementById('suggestions')
+
+var sortSong = [];
+
+AllSongs.forEach((item) => {
+    var Choice = document.createElement('option');
+    Choice.value = item.SongName;
+    datalist.appendChild(Choice);
+    sortSong.push((Choice.value).toLowerCase())
+})
+
+console.log(sortSong)
+
+function DisplaySection() {
+    var inputValue = (searchInput.value).toLowerCase();
+    console.log(inputValue);
+    if(sortSong.includes(inputValue)){
+        console.log(sortSong.indexOf(inputValue));
+        if(PlaySong(sortSong.indexOf(inputValue),true)){
+            searchInput.value = ''
+        }
+        if (inputValue === "Honey Singh") {
+            DisplayArtist('yoyo-songs', 'yoyo');
+        } else if (inputValue === "Arjit Singh") {
+            DisplayArtist('arijit-songs', 'arijit');
+        } else if (inputValue === "BollyWood Songs") {
+            DisplayArtist('bollywood-songs', 'bollyWood');
+        }
+    }else{
+        alert('Song Not Found :(')
     }
 }
 
