@@ -1,8 +1,14 @@
+#yoyo-songs,
 #arijit-songs,
 #bollywood-songs{
     display: none;
 }
 
+#Home{
+    background-color: var(--BG);
+    border-radius: 10px;
+
+}
 /* #yoyo-songs{
     display: block;
 } */
@@ -19,6 +25,64 @@
     position: relative;
     overflow-y: scroll;
     transition: width .4s linear;
+}
+
+.allPlaylists{
+    height: 100%;
+    width: 100%;
+}
+
+.allPlaylists h1{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    /* text-decoration: 5px underline; */
+    text-underline-offset: 15px;
+}
+
+.allPlaylists h1 i{
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.allPlaylists .playlistsall{
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+    width: 95%;
+    background-color: #313131;
+    margin: 0 auto;
+    border-radius: 10px;
+    /* padding: 20px; */
+}
+
+.common {
+    width: 17rem;
+    height: 18rem;
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    transition: all .2s linear;
+}
+
+.common:hover{
+    background-color: #222;
+    box-shadow: 0 0 10px #444;
+}
+
+.playlistsall .common img{
+    width: 13rem;
+    height: 13rem;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+.playlistsall .common span{
+    font-size: 30px;
+    margin-top: 20px;
 }
 
 .mid-section .artist{
@@ -93,6 +157,7 @@
     /* height: calc(100vh - 200px); */
     height: auto;
     padding: 20px 60px;
+    margin-bottom: 100px;
 }
 
 .ArtistSongList .SongHeader{

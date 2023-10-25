@@ -374,7 +374,9 @@ function DisplaySection() {
 
 
 function DisplayArtist(id, index) {
-    DisplayPlaylist(index);
+    if(id != 'Home'){
+        DisplayPlaylist(index);
+    }
     const section = document.querySelectorAll('.mid-section');
     section.forEach((item) => {
         item.style.display = 'none';

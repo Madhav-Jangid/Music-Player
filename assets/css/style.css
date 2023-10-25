@@ -200,7 +200,8 @@ body
         align-items: center;
     }
 
-    #right-nav{
+    #right-nav,
+    #left-nav{
         display: none;
     }
     /* #left-nav{

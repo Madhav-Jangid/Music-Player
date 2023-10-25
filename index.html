@@ -20,7 +20,7 @@
             <i class='bx bx-menu-alt-left' onclick="leftNav()"></i>
         </div>
         <div class="top-div">
-            <button><i class='bx bx-home-alt'><span id="dn">Home</span></i></button>
+            <button  onclick="DisplayArtist('Home','home')"><i class='bx bx-home-alt'><span id="dn">Home</span></i></button>
             <div class="searchDiv">
                 <input type="text" name="Search" id="dn2" placeholder="Search" >
                 <datalist id="suggestions">
@@ -36,7 +36,7 @@
 
         <div class="artist-div">
             <h2>Play Lists</h2>
-            <div id="yoyo" onclick="DisplayArtist('yoyo-songs','yoyo')" class="artist playlist active">
+            <div id="yoyo" onclick="DisplayArtist('yoyo-songs','yoyo')" class="artist playlist">
                 <img src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
                     alt="YoYo Honey Singh">
                 <span id="dn">Honey Singh</span>
@@ -59,6 +59,34 @@
     </section>
 
     <section id="center-ele">
+        <div class="mid-section" id="Home">
+            <div class="allPlaylists" >
+                <h1>Your Play Lists  <i class='bx bxs-music' ></i></h1>
+
+                <div class="playlistsall">
+                    <div onclick="DisplayArtist('yoyo-songs','yoyo')" class="Honeysingh common">
+                            <img src="https://imgs.search.brave.com/P58SAyAHN2RtYU5N5BlCjY3BGwiTk6uaJg2y7LcmlvU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pMS5z/bmRjZG4uY29tL2Fy/dHdvcmtzLTAwMDA5/NzI0MDM0Mi0ycGFj/ZTctdDUwMHg1MDAu/anBn"
+                                alt="YoYo Honey Singh">
+                            <span id="dn">Honey Singh</span>
+                    </div>
+
+                    <div onclick="DisplayArtist('arijit-songs','arijit')" class="ArjitSingh common">
+                        
+                            <img src="https://imgs.search.brave.com/tqvBGmicsNh4hvUBEUCMvVFPi_6A0gWGCX-lOC7qmnc/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZTMubW91dGhzaHV0/LmNvbS9pbWFnZXMv/aW1hZ2VzcC85MjU5/MzQ2NTJzLmpwZw"
+                                alt="Arjit Singh">
+                            <span id="dn">Arjit Singh</span>
+                    </div>
+
+                    <div onclick="DisplayArtist('bollywood-songs','bollyWood')"  class="bollywood common">
+                        
+                            <img src="https://imgs.search.brave.com/e_QrsJRgIy1Pcm8th588QMEEWWKHY0Xm1MjNngRT9TU/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXZlY3Rvci9tb2Rl/cm4tYm9sbHl3b29k/LWxvZ28tdW5pdC1z/eW1ib2wtMjYwbnct/MTQxNTc4MDUxMC5q/cGc"
+                                alt="BollyWood Songs">
+                            <span id="dn">BollyWood Songs</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="mid-section" id="yoyo-songs">
             <div class="artist">
                 <div class="navigatePlaylist">
